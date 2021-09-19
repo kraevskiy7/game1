@@ -50,9 +50,5 @@ public class Inventory : MonoBehaviour
         buyer.selectedcheck = false;
     }
 
-    void SelectedItem()
-    {
-
-    }
 
 }
