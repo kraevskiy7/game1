@@ -9,9 +9,7 @@ public class Inventory : MonoBehaviour
 {
     public GameObject cellComtainer;
     public MoveBuyer buyer;
-    public GameObject buttonSell;
     public GameObject[] allProducts;
-    public Item script;
 
     void Start()
     {
@@ -36,10 +34,6 @@ public class Inventory : MonoBehaviour
         if (buyer.selectedcheck)
         {
             cellComtainer.SetActive(true);
-
-
-            //var image = allProducts[i].GetComponent<Image>();
-            //image.color = new Color(1, 1, 1, 0.5f);
         }
 
         else cellComtainer.SetActive(false);

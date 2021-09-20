@@ -6,9 +6,12 @@ using UnityEngine.UI;
 
 public class ClickRecever : MonoBehaviour, IPointerClickHandler
 {
+
     private bool ready = false;
     private int select = 0;
     private GameObject product;
+    public GameObject checkmark;
+
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -32,17 +35,23 @@ public class ClickRecever : MonoBehaviour, IPointerClickHandler
         if (ready)
         {
             if (select == 1)
-            {
-                var img = product.GetComponent<Image>();
-                img.color = new Color(1, 1, 1, 0.5f);
-            }
+                TrueSelect();
             else if (select == 2)
-            {
-                var img = product.GetComponent<Image>();
-                img.color = new Color(1, 1, 1, 1);
-            }
-
+                FalseSelect();
         }
+    }
 
+    void TrueSelect()
+    {
+        var img = product.GetComponent<Image>();
+        img.color = new Color(1, 1, 1, 0.5f);
+
+        
+    }
+
+    void FalseSelect()
+    {
+        var img = product.GetComponent<Image>();
+        img.color = new Color(1, 1, 1, 1);
     }
 }
